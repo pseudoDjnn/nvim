@@ -1,8 +1,11 @@
 --Nvim completions
 return {
+  
+  {
   "hrsh7th/nvim-cmp",
   config = function()
     local cmp = require 'cmp'
+    require("luasnip.loaders.from_vscode").lazy_load()
 
     cmp.setup({
       snippet = {
@@ -31,6 +34,7 @@ return {
       })
     })
   end,
+  },
   -- Allows us to use luasnip
   {
     "L3MON4D3/LuaSnip",
