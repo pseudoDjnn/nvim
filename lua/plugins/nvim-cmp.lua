@@ -1,6 +1,6 @@
 --Nvim completions
 return {
-  
+
   {
   "hrsh7th/nvim-cmp",
   config = function()
@@ -27,7 +27,7 @@ return {
         ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
       }),
       sources = cmp.config.sources({
-        -- { name = 'nvim_lsp' },
+        { name = 'nvim_lsp' },
         { name = 'luasnip' }, -- For luasnip users.
       }, {
         { name = 'buffer' },
@@ -43,5 +43,9 @@ return {
       --VSCode style snippets
       "rafamadriz/friendly-snippets",
     },
+  },
+  -- Adding more completions by reaching out to the LSP
+  {
+    "hrsh7th/cmp-nvim-lsp",
   },
 }
