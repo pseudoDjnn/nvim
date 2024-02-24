@@ -24,7 +24,7 @@ vim.opt.rtp:prepend(lazypath)
 -- "Require "Lazy
 require("lazy").setup("plugins")
 
---TODO: Learn Lua well enough to embed neovim into it and become the biggest loser of all time
+--TODO: Learn Lua well enough to embed neovim into VSCode and become the biggest loser of all time
 if vim.g.vscode then
   -- Vscode extension
   vim.cmd[[source $HOME/.config/nvim/vscode/settings.vim]]
