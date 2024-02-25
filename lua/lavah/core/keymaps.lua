@@ -5,13 +5,29 @@ local keymap = vim.keymap.set -- Make a variable to map easier
 
 -- General Mapping
 
+
+-- Better navigation with "ctrl + h/j/k/l"
+keymap("n", "<C-h>", "<C-w>h")
+keymap("n", "<C-j>", "<C-w>j")
+keymap("n", "<C-k>", "<C-w>k")
+keymap("n", "<C-l>", "<C-w>l")
+
+-- Quick escape from insert mode
 keymap("i", "jk", "<ESC>")
+
+-- Clear Character and don't copy into register
+keymap("n", "x", '"_x')
 
 -- Clear search highlights
 keymap("n", "<leader>nh", ":nohl<CR>")
 
--- Clear Character and don't copy into register
-keymap("n", "x", '"_x')
+-- TAB buffer navigation
+keymap("n", "<Tab>", "<C-w>l")
+keymap("n", "<S-Tab>", "<C-w>h")
+
+-- Move text in Visual Mode
+keymap("x", "J", ":m '>+1<CR>gv=gv")
+keymap("x", "K", ":m '<-2<CR>gv=gv")
 
 -- Increment and Decrement numbers
 keymap("n", "<leader>+", "<C-a>")

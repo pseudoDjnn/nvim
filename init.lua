@@ -3,7 +3,8 @@ vim.g.loaded_netrew = 1
 vim.g.loaded_netrwPlugin = 1
 
 require "lavah.core.keymaps"
-require "lavah.core.settings"
+--require "lavah.core.options"
+
 
 --Lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

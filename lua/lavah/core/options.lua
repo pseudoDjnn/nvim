@@ -1,10 +1,8 @@
 -- Use space as the leader key 'global variable'
-vim.g.mapleader = " "
+--vim.g.mapleader = " "
+--vim.g.maplocalleader = " "
 
--- lua's way to use certain varibles in vimscript
--- vim.g['zoom#statustext'] = 'Z'
-
--- environment variable
+-- Environment variable
 vim.env.FZF_DEFAULT_OPTS = '--layout=reverse'
 
 
@@ -13,53 +11,111 @@ vim.env.FZF_DEFAULT_OPTS = '--layout=reverse'
 -- buffer-scoped
 vim.opt.autoindent = true
 
--- window-scoped
+-- Window-scoped
 vim.opt.cursorline = true
 
 -- global-scope
 vim.opt.autowrite = true
 vim.opt.autoread = true
 
--- opt leader key
--- let g:mapleader = --\<Space>--
+
 local opt = vim.opt
 -- vim.keymap.opt("n", "<leader>pv", vim.cmd.Ex)
 
 -- Syntax Highlights
 opt.hidden = true -- Required to keep multiple buffers open
-opt.clipboard = "unnamedplus" -- Clipboard access
+
+-- Enable clipboard for our actual system
+opt.clipboard = "unnamed, unnamedplus" -- Clipboard access
+
 opt.backspace = '2'
 opt.showcmd = true
-opt.shiftwidth = 2 -- Space indentation
 opt.title = true -- Leave the title at the top
 opt.guifont = "monospace:h17" -- Font update
-opt.sidescrolloff = 8
+
+
+-- Enable scrolling for our buffer within "8" lines
+opt.sidescrolloff = "80"
+
+
+-- Enable sign column all the time so plugins do not override
 opt.signcolumn = "yes" -- Always show the sign column, text shifts if not
 opt.showtabline = 1 -- Always show tabs
-opt.updatetime = 100 -- Faster completion
+
+
+-- Faster completion (4000ms default) and auto completion opts
+opt.updatetime = 50 -- Faster completion
+opt.completeopt = "menuone,noselect" -- Completion options
+
+
+-- Enable persistent undo
+opt.undofile = true -- Persistent undo
+
+
+-- Enable indenting 
 opt.smartindent = true -- Make indents smart
-opt.smartcase = true -- Smart case caps search
+opt.shiftwidth = 2 -- Space indentation
+
+
+-- Smart indenting
+opt.breakindent = true -- Enable break indent
+
+
+-- Enable incremental searching
+opt.incsearch = true -- Makes search act like search in modern browsers
+opt.hlsearch = true -- Highlight search results
+
+
+-- Enable ignorecase and smartcase for better searching
 opt.ignorecase = true -- Ignore the case and just search the word
+opt.smartcase = true -- Smart case caps search
 opt.ruler = false
-opt.relativenumber = true -- Set the relative nuber so you can look cool and still not be able to code
+
+
+--Enables relative line numbers
+opt.nu = true
+opt.rnu = true
+
+
+-- Enable termguicolors for colorscheme
 opt.termguicolors = true -- Term gui support
--- opt.softtabstop = 2
-opt.expandtab = true
+
+
+-- Disable text warp
 opt.wrap = false  -- Display long lines as just one line
 opt.encoding = 'utf-8' -- The encoding displayed
 opt.pumheight = 10 -- Makes popup menu smaller
 opt.fileencoding = 'utf-8' -- The encoding written to file
--- opt.colorcolumn = "10"
+
+
+-- Set a colorcolumn width
+opt.colorcolumn = "80"
+
+
+-- Enable cursorline highlighting
 opt.ruler = true -- Show the cursor position all the time
 opt.cmdheight = 1 -- More space for displaying messages
 -- opt.iskeyword = '+', '=', '-' -- Treat dash separated words as a word text object--
+
+
+-- Enable mouse mode
 opt.mouse = "a" -- Enable your mouse
+
+
+-- Enable better split windows
 opt.splitbelow = true -- Horizontal splits will automatically be below
 opt.splitright = true -- Vertical splits will automatically be to the right
+
+
 opt.conceallevel = 0 -- So that I can see `` in markdown files
+
+
+
+-- Set the tabs to 2 spaces
 opt.tabstop = 2 -- Insert 2 spaces for a tab
-opt.smarttab = true -- Makes tabbing smarter will realize you have 2 vs 4
 opt.expandtab = true -- Converts tabs to spaces
+opt.smarttab = true -- Makes tabbing smarter will realize you have 2 vs 4
+opt.softtabstop = 2 -- Insert 2 spaces for a tab
 -- opt.autoindent = true -- Good auto indent
 opt.laststatus = 2 --Always display the status line
 opt.number = true -- Line numbers
@@ -70,8 +126,9 @@ opt.background = "dark" -- tell vim what the background color looks like
 -- opt.nowritebackup= true -- This is recommended by coc
 opt.timeoutlen = 1000 -- By default timeoutlen is 1000 ms
 
+local fn = vim.api.nvim
 if vim.fn.has('nvim-0.9') == 1 then
-  print('we got neovim 0.9')
+  print('Welcome to Neovim 0.9')
 end
 
 
