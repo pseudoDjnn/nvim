@@ -1,7 +1,3 @@
--- Use space as the leader key 'global variable'
---vim.g.mapleader = " "
---vim.g.maplocalleader = " "
-
 -- Environment variable
 vim.env.FZF_DEFAULT_OPTS = '--layout=reverse'
 
@@ -11,12 +7,11 @@ vim.env.FZF_DEFAULT_OPTS = '--layout=reverse'
 -- buffer-scoped
 vim.opt.autoindent = true
 
--- Window-scoped
-vim.opt.cursorline = true
 
--- global-scope
+-- Global-scope
 vim.opt.autowrite = true
 vim.opt.autoread = true
+
 
 
 local opt = vim.opt
@@ -35,7 +30,7 @@ opt.guifont = "monospace:h17" -- Font update
 
 
 -- Enable scrolling for our buffer within "8" lines
-opt.sidescrolloff = "80"
+opt.sidescrolloff = "8"
 
 
 -- Enable sign column all the time so plugins do not override
@@ -45,7 +40,7 @@ opt.showtabline = 1 -- Always show tabs
 
 -- Faster completion (4000ms default) and auto completion opts
 opt.updatetime = 50 -- Faster completion
-opt.completeopt = "menuone,noselect" -- Completion options
+opt.completeopt = "menuone, noselect" -- Completion options
 
 
 -- Enable persistent undo
@@ -58,7 +53,8 @@ opt.shiftwidth = 2 -- Space indentation
 
 
 -- Smart indenting
-opt.breakindent = true -- Enable break indent
+--opt.breakindent = true -- Enable break indent
+
 
 
 -- Enable incremental searching
@@ -73,15 +69,15 @@ opt.ruler = false
 
 
 --Enables relative line numbers
-opt.nu = true
-opt.rnu = true
+opt.number = true
+opt.relativenumber = true
 
 
 -- Enable termguicolors for colorscheme
 opt.termguicolors = true -- Term gui support
 
 
--- Disable text warp
+-- Disable text wrap
 opt.wrap = false  -- Display long lines as just one line
 opt.encoding = 'utf-8' -- The encoding displayed
 opt.pumheight = 10 -- Makes popup menu smaller
@@ -89,10 +85,11 @@ opt.fileencoding = 'utf-8' -- The encoding written to file
 
 
 -- Set a colorcolumn width
-opt.colorcolumn = "80"
+-- opt.colorcolumn = "80"
 
 
 -- Enable cursorline highlighting
+opt.cursorline = true -- Enable highlighting of the current line
 opt.ruler = true -- Show the cursor position all the time
 opt.cmdheight = 1 -- More space for displaying messages
 -- opt.iskeyword = '+', '=', '-' -- Treat dash separated words as a word text object--
@@ -116,11 +113,9 @@ opt.tabstop = 2 -- Insert 2 spaces for a tab
 opt.expandtab = true -- Converts tabs to spaces
 opt.smarttab = true -- Makes tabbing smarter will realize you have 2 vs 4
 opt.softtabstop = 2 -- Insert 2 spaces for a tab
--- opt.autoindent = true -- Good auto indent
 opt.laststatus = 2 --Always display the status line
-opt.number = true -- Line numbers
-opt.cursorline = true -- Enable highlighting of the current line
-opt.background = "dark" -- tell vim what the background color looks like
+--opt.number = true -- Line numbers
+--opt.background = "dark" -- tell vim what the background color looks like
 -- opt.noshowmode = false -- We don't need to see things like -- INSERT -- anymore
 -- opt.nobackup = true -- This is recommended by coc
 -- opt.nowritebackup= true -- This is recommended by coc

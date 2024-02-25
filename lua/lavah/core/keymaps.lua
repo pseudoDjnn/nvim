@@ -22,7 +22,7 @@ keymap("n", "x", '"_x')
 keymap("n", "<leader>nh", ":nohl<CR>")
 
 -- TAB buffer navigation
-keymap("n", "<Tab>", "<C-w>l")
+keymap("n", "<Tab>", "<C-w>;")
 keymap("n", "<S-Tab>", "<C-w>h")
 
 -- Move text in Visual Mode
