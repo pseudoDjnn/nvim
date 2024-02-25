@@ -3,7 +3,7 @@ vim.g.loaded_netrew = 1
 vim.g.loaded_netrwPlugin = 1
 
 require "lavah.core.keymaps"
---require "lavah.core.options"
+require "lavah.core.options"
 
 
 --Lazy
