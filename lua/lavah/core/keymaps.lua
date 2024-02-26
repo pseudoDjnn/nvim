@@ -45,3 +45,8 @@ keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>")
 keymap("n", "<leader>fc", "<cmd>Telescope grep_string<cr>")
 keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
+
+--LazyGit
+keymap("n", "<Leader>gg", ":LazyGit<CR>")
+
+
