@@ -22,7 +22,7 @@ keymap("n", "x", '"_x')
 keymap("n", "<leader>nh", ":nohl<CR>")
 
 -- TAB buffer navigation
-keymap("n", "<Tab>", "<C-w>;")
+keymap("n", "<Tab>", "<C-w>l")
 keymap("n", "<S-Tab>", "<C-w>h")
 
 -- Move text in Visual Mode
@@ -48,5 +48,9 @@ keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
 
 --LazyGit
 keymap("n", "<Leader>gg", ":LazyGit<CR>")
+
+-- Bufferline
+keymap("n", "<Leader>bl", ":BufferLinePick<CR>")
+keymap("n", "<Leader>bc", ":BufferLineCloseOthers<CR>")
 
 
