@@ -8,10 +8,6 @@ return {
 		config.setup({
 			auto_install = true,
 			ensure_installed = {
-        "html",
-        "css",
-        "javascript",
-        "json",
         "markdown",
         "markdown_inline",
         "bash",
