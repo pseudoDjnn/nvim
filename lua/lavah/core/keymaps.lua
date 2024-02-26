@@ -5,7 +5,6 @@ local keymap = vim.keymap.set -- Make a variable to map easier
 
 -- General Mapping
 
-
 -- Better navigation with "ctrl + h/j/k/l"
 keymap("n", "<C-h>", "<C-w>h")
 keymap("n", "<C-j>", "<C-w>j")
@@ -33,7 +32,7 @@ keymap("x", "K", ":m '<-2<CR>gv=gv")
 keymap("n", "<leader>+", "<C-a>")
 keymap("n", "<leader>-", "<C-x>")
 
--- Window splits
+-- Window splits (tmux-navigator)
 keymap("n", "<leader>sv", "<C-w>v") -- Vertical
 keymap("n", "<leader>sh", "<C-w>s") -- Horizontal
 keymap("n", "<leader>se", "<C-w>=") -- Equal width and height
@@ -41,10 +40,13 @@ keymap("n", "<leader>sx", "<cmd>close<CR>") -- Close the current split
 
 -- Telescope
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
-keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>")
-keymap("n", "<leader>fc", "<cmd>Telescope grep_string<cr>")
+keymap("n", "<leader>rg", "<cmd>Telescope live_grep<cr>")
+keymap("n", "<leader>gs", "<cmd>Telescope grep_string<cr>")
 keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
+--local builtin = require("telescope.builtin")
+--vim.keymap.set("n", "<C-p>", builtin.find_files, {})
+--vim.keymap.set("n", "<leader>rg", builtin.live_grep, {})
 
 --LazyGit
 keymap("n", "<Leader>gg", ":LazyGit<CR>")
@@ -53,4 +55,6 @@ keymap("n", "<Leader>gg", ":LazyGit<CR>")
 keymap("n", "<Leader>bl", ":BufferLinePick<CR>")
 keymap("n", "<Leader>bc", ":BufferLineCloseOthers<CR>")
 
-
+--Toggle Term
+--keymap("i", [[<c-/>]], "<cmd>exe v:count1 . 'ToggleTerm'<CR>")
+--keymap("n", [[<c-/>]], "<cmd>exe v:count1 . 'ToggleTerm'<CR>")

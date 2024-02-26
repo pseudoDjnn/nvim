@@ -9,26 +9,26 @@
 
   # Table of Contents
 
-    
+  
     
 * [Installation](#installation)
 
-    
+   
 * [Usage](#usage)
 
-    
+   
 * [Test](#test)
 
-    
+   
 * [Contributors](#contributors)
 
-    
+   
 * [Questions](#questions)
 
-    
+   
 * [License](#license)
 
-    
+  
   
   ## Installation (Dependencies)
 
@@ -50,26 +50,26 @@
 
 
     No
-    
-    
+
+ 
   # Contributors
     
     
     
     pseudoDjnn
 
-    
+   
   # Questions
 
     Wanting to understand more about this repo?
-    
+
     Contact me at https://github.com/pseudoDjnn/ or at alexander.havers13@gmail.com
-    
-  
+
+
     ## License
 
     Copyright @ .  All Rights Reserved.
 
     Licensed under the  license.
-    
+
 
