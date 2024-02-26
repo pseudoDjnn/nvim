@@ -33,9 +33,9 @@ keymap("n", "<leader>+", "<C-a>")
 keymap("n", "<leader>-", "<C-x>")
 
 -- Window splits (tmux-navigator)
-keymap("n", "<leader>sv", "<C-w>v") -- Vertical
-keymap("n", "<leader>sh", "<C-w>s") -- Horizontal
-keymap("n", "<leader>se", "<C-w>=") -- Equal width and height
+keymap("n", "<leader>sv", "<C-w>v")         -- Vertical
+keymap("n", "<leader>sh", "<C-w>s")         -- Horizontal
+keymap("n", "<leader>se", "<C-w>=")         -- Equal width and height
 keymap("n", "<leader>sx", "<cmd>close<CR>") -- Close the current split
 
 -- Telescope
@@ -44,17 +44,25 @@ keymap("n", "<leader>rg", "<cmd>Telescope live_grep<cr>")
 keymap("n", "<leader>gs", "<cmd>Telescope grep_string<cr>")
 keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
---local builtin = require("telescope.builtin")
---vim.keymap.set("n", "<C-p>", builtin.find_files, {})
---vim.keymap.set("n", "<leader>rg", builtin.live_grep, {})
+
+-- NvimTree
+keymap("n", "<C-n>", "<cmd>NvimTreeToggle<cr>")
 
 --LazyGit
-keymap("n", "<Leader>gg", ":LazyGit<CR>")
+keymap("n", "<Leader>lg", ":LazyGit<CR>")
+
+-- Git Signs
+keymap("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {})
+keymap("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", {})
 
 -- Bufferline
 keymap("n", "<Leader>bl", ":BufferLinePick<CR>")
 keymap("n", "<Leader>bc", ":BufferLineCloseOthers<CR>")
 
---Toggle Term
---keymap("i", [[<c-/>]], "<cmd>exe v:count1 . 'ToggleTerm'<CR>")
---keymap("n", [[<c-/>]], "<cmd>exe v:count1 . 'ToggleTerm'<CR>")
+-- LSP Config
+keymap("n", "K", vim.lsp.buf.hover, {})
+keymap("n", "gd", vim.lsp.buf.definition, {})
+keymap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+
+-- None-ls
+keymap("n", "<leader>rf", vim.lsp.buf.format, {})

@@ -3,7 +3,6 @@ vim.env.FZF_DEFAULT_OPTS = '--layout=reverse'
 
 
 local opt = vim.opt
--- vim.keymap.opt("n", "<leader>pv", vim.cmd.Ex)
 
 -- Buffer-scoped
 opt.autoindent = true
