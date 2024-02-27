@@ -27,9 +27,9 @@ keymap("n", "x", '"_x')
 -- Clear search highlights
 keymap("n", "<leader>nh", ":nohl<CR>")
 
--- TAB buffer navigation
---keymap("n", "<tab>", ":tabnext<Return>")
---keymap("n", "<s-tab>", ":tabprev<Return>")
+-- TAB buffer navigation (now works with bufferline.lua)
+keymap("n", "<tab>", "<Cmd>BufferLineCycleNext<Return>")
+keymap("n", "<s-tab>", "<Cmd>BufferLineCyclePrev<Return>")
 
 -- Move text in Visual Mode
 keymap("x", "J", ":m '>+1<CR>gv=gv")
@@ -48,7 +48,7 @@ end, opts)
 
 -- Plugin Mapping
 -- Bufferline
-keymap("n", "<Leader>bl", ":BufferLinePick<CR>")
+keymap("n", "<Leader>bl", ":BufferLinePick<CR>")  --Secondary buffer picker
 keymap("n", "<Leader>bc", ":BufferLineCloseOthers<CR>")
 
 -- Git Signs
@@ -73,7 +73,7 @@ keymap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actio
 keymap("n", "<leader>ff", "<cmd>Tele find_files<cr>")
 keymap("n", "<leader>rg", "<cmd>Telescope live_grep<cr>")
 keymap("n", "<leader>gs", "<cmd>Telescope grep_string<cr>")
-keymap("n", "<leader>fb", "<cmd>Telescope file_browser<cr>")
+keymap("n", "<leader>fb", "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>")
 keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
 
 -- Tmux-navigator

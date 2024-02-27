@@ -16,7 +16,7 @@ opt.title = true              -- Leave the title at the top
 opt.autoindent = true         -- Enable autoindent
 opt.smartindent = true -- Make indents smart
 
--- Set the tabs to 2 spaces
+-- Sgt the tabs to 2 spaces
 opt.tabstop = 2      -- Insert 2 spaces for a tab
 opt.expandtab = true -- Converts tabs to spaces
 opt.smarttab = true  -- Makes tabbing smarter will realize you have 2 vs 4
