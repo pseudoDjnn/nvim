@@ -29,7 +29,7 @@ require("lazy").setup("plugins")
 if vim.g.vscode then
   -- Vscode extension
   vim.cmd[[source $HOME/.config/nvim/vscode/settings.vim]]
-  -- vim.cmd[[source $HOME/.config/nvim/vscode/keymaps.vim]]
+  -- vim.cmd[[source $HOME/.config/nvim/utils/which-key.json]]
  -- require('vscode/api')
  -- require('vscode/only-vscode')
 else

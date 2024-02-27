@@ -55,11 +55,11 @@ keymap("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 keymap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
 
 -- Telescope
-keymap("n", "<leader>ff", "<cmd>find files<cr>")
-keymap("n", "<leader>rg", "<cmd>ripgrep<cr>")
-keymap("n", "<leader>gs", "<cmd>grep string<cr>")
-keymap("n", "<leader>fb", "<cmd>buffers<cr>")
-keymap("n", "<leader>fh", "<cmd>help tags<cr>")
+keymap("n", "<leader>ff", "<cmd>Tele find_files<cr>")
+keymap("n", "<leader>rg", "<cmd>Telescope live_grep<cr>")
+keymap("n", "<leader>gs", "<cmd>Telescope grep_string<cr>")
+keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
+keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
 
 -- Tmux-navigator
 keymap("n", "<leader>sv", "<C-w>v", { desc = "Vertical split" })         -- Vertical
