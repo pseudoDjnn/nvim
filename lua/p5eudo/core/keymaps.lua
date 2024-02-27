@@ -2,8 +2,15 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 local keymap = vim.keymap.set -- Make a variable to map easier
+local opts = { noremap = true, silent = true }
 
 -- General Mapping
+--
+-- Save file, save all files, quit, save and quit
+keymap("n", "<leader>w", ":update<Return>")
+keymap("n", "<leader>wa", ":wa<Return>")
+keymap("n", "<leader>q", ":quit<Return>")
+keymap("n", "<leader>~", ":wa<Return>:q<Return>")
 
 -- Better navigation with "ctrl + h/j/k/l"
 keymap("n", "<C-h>", "<C-w>h")
@@ -21,17 +28,25 @@ keymap("n", "x", '"_x')
 keymap("n", "<leader>nh", ":nohl<CR>")
 
 -- TAB buffer navigation
-keymap("n", "<Tab>", "<C-w>l")
-keymap("n", "<S-Tab>", "<C-w>h")
+--keymap("n", "<tab>", ":tabnext<Return>")
+--keymap("n", "<s-tab>", ":tabprev<Return>")
 
 -- Move text in Visual Mode
 keymap("x", "J", ":m '>+1<CR>gv=gv")
 keymap("x", "K", ":m '<-2<CR>gv=gv")
 
 -- Increment and Decrement numbers
-keymap("n", "<leader>+", "<C-a>")
-keymap("n", "<leader>-", "<C-x>")
+keymap("n", "+", "<C-a>")
+keymap("n", "-", "<C-x>")
 
+-- Diagnostics
+keymap("n", "<C-j>", function()
+  vim.lsp.diagnostic.goto_next({ wrap = true })
+end, opts)
+
+
+
+-- Plugin Mapping
 -- Bufferline
 keymap("n", "<Leader>bl", ":BufferLinePick<CR>")
 keymap("n", "<Leader>bc", ":BufferLineCloseOthers<CR>")
@@ -58,12 +73,12 @@ keymap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actio
 keymap("n", "<leader>ff", "<cmd>Tele find_files<cr>")
 keymap("n", "<leader>rg", "<cmd>Telescope live_grep<cr>")
 keymap("n", "<leader>gs", "<cmd>Telescope grep_string<cr>")
-keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
+keymap("n", "<leader>fb", "<cmd>Telescope file_browser<cr>")
 keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
 
 -- Tmux-navigator
-keymap("n", "<leader>sv", "<C-w>v", { desc = "Vertical split" })         -- Vertical
 keymap("n", "<leader>sh", "<C-w>s", { desc = "Horizontal split" })         -- Horizontal
+keymap("n", "<leader>sv", "<C-w>v", { desc = "Vertical split" })         -- Vertical
 keymap("n", "<leader>se", "<C-w>=", { desc = "Equal splits" })         -- Equal width and height
 keymap("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close the current split" }) -- Close the current split
 
