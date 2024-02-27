@@ -32,37 +32,39 @@ keymap("x", "K", ":m '<-2<CR>gv=gv")
 keymap("n", "<leader>+", "<C-a>")
 keymap("n", "<leader>-", "<C-x>")
 
--- Window splits (tmux-navigator)
-keymap("n", "<leader>sv", "<C-w>v")         -- Vertical
-keymap("n", "<leader>sh", "<C-w>s")         -- Horizontal
-keymap("n", "<leader>se", "<C-w>=")         -- Equal width and height
-keymap("n", "<leader>sx", "<cmd>close<CR>") -- Close the current split
-
--- Telescope
-keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
-keymap("n", "<leader>rg", "<cmd>Telescope live_grep<cr>")
-keymap("n", "<leader>gs", "<cmd>Telescope grep_string<cr>")
-keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
-keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
-
--- NvimTree
-keymap("n", "<C-n>", "<cmd>NvimTreeToggle<cr>")
-
---LazyGit
-keymap("n", "<Leader>lg", ":LazyGit<CR>")
+-- Bufferline
+keymap("n", "<Leader>bl", ":BufferLinePick<CR>")
+keymap("n", "<Leader>bc", ":BufferLineCloseOthers<CR>")
 
 -- Git Signs
 keymap("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {})
 keymap("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", {})
 
--- Bufferline
-keymap("n", "<Leader>bl", ":BufferLinePick<CR>")
-keymap("n", "<Leader>bc", ":BufferLineCloseOthers<CR>")
-
--- LSP Config
-keymap("n", "K", vim.lsp.buf.hover, {})
-keymap("n", "gd", vim.lsp.buf.definition, {})
-keymap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+--LazyGit
+keymap("n", "<Leader>lg", ":LazyGit<CR>")
 
 -- None-ls
-keymap("n", "<leader>rf", vim.lsp.buf.format, {})
+keymap("n", "<leader>rf", vim.lsp.buf.format, { desc = "reformat"})
+
+-- NvimTree
+keymap("n", "<C-n>", "<cmd>NvimTreeToggle<cr>")
+
+-- LSP Config
+keymap("n", "K", vim.lsp.buf.hover, { desc = "Hover" })
+keymap("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+keymap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
+
+-- Telescope
+keymap("n", "<leader>ff", "<cmd>find files<cr>")
+keymap("n", "<leader>rg", "<cmd>ripgrep<cr>")
+keymap("n", "<leader>gs", "<cmd>grep string<cr>")
+keymap("n", "<leader>fb", "<cmd>buffers<cr>")
+keymap("n", "<leader>fh", "<cmd>help tags<cr>")
+
+-- Tmux-navigator
+keymap("n", "<leader>sv", "<C-w>v", { desc = "Vertical split" })         -- Vertical
+keymap("n", "<leader>sh", "<C-w>s", { desc = "Horizontal split" })         -- Horizontal
+keymap("n", "<leader>se", "<C-w>=", { desc = "Equal splits" })         -- Equal width and height
+keymap("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close the current split" }) -- Close the current split
+
+

@@ -40,6 +40,7 @@ return {
 			})
 			lspconfig.html.setup({
 				capabilities = capabilities,
+
 			})
 		end,
 	},
