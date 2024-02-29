@@ -23,13 +23,17 @@ vim.opt.rtp:prepend(lazypath)
 --local opts = {}
 
 -- "Require "Lazy
-require("lazy").setup("plugins")
+require("lazy").setup({
+  spec = {
+    { import = "plugins" }
+  },
+})
 
 --TODO: Learn Lua well enough to embed neovim into VSCode and become the biggest loser of all time
 if vim.g.vscode then
   -- Vscode extension
   vim.cmd[[source $HOME/.config/nvim/vscode/settings.vim]]
-  -- vim.cmd[[source $HOME/.config/nvim/utils/which-key.json]]
+  -- vim.cmd[[source $HOME/.config/nvim/utils/settings.json]]
  -- require('vscode/api')
  -- require('vscode/only-vscode')
 else

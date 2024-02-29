@@ -2,6 +2,7 @@
 return {
 	"folke/noice.nvim",
 	-- event = "VeryLazy",
+  presets= { inc_name = true },
 	opts = {
 		-- Default opts for now
 		lsp = {

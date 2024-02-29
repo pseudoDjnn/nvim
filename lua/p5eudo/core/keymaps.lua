@@ -35,6 +35,12 @@ keymap("n", "<s-tab>", "<Cmd>BufferLineCyclePrev<Return>")
 keymap("x", "J", ":m '>+1<CR>gv=gv")
 keymap("x", "K", ":m '<-2<CR>gv=gv")
 
+-- Rename current word
+keymap("n", "<leader>rn", ":IncRename ")
+
+-- Refactoring 
+keymap("n", "<leader>r", ":Refactor ")
+
 -- Increment and Decrement numbers
 keymap("n", "+", "<C-a>")
 keymap("n", "-", "<C-x>")
