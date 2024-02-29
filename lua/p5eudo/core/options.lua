@@ -120,8 +120,10 @@ opt.formatoptions:append({"r"})
 
 local fn = vim.api.nvim
 if vim.fn.has('nvim-0.9') == 1 then
-	print('Welcome <User>')
+	print('Welcome <p5eudo>')
 end
+
+
 
 
 -- vim.cmd "opt whichwrap+=<,>,[,],h,1"
