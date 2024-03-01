@@ -53,6 +53,8 @@ end, opts)
 
 
 -- Plugin Mapping
+-- Alternate Toggler
+keymap("n", "<leader>i", ":ToggleAlternate<CR>")
 -- Bufferline
 keymap("n", "<Leader>bl", ":BufferLinePick<CR>")  --Secondary buffer picker
 keymap("n", "<Leader>bc", ":BufferLineCloseOthers<CR>")
