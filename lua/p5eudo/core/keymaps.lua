@@ -70,7 +70,7 @@ keymap("n", "<Leader>lg", ":LazyGit<CR>")
 keymap("n", "<leader>rf", vim.lsp.buf.format, { desc = "reformat"})
 
 -- NvimTree
-keymap("n", "<C-n>", "<cmd>NvimTreeToggle<cr>")
+keymap("n", "<C-d>", "<cmd>NvimTreeToggle<cr>")
 
 -- LSP Config
 keymap("n", "K", vim.lsp.buf.hover, { desc = "Hover" })
@@ -90,4 +90,5 @@ keymap("n", "<leader>sv", "<C-w>v", { desc = "Vertical split" })         -- Vert
 keymap("n", "<leader>se", "<C-w>=", { desc = "Equal splits" })         -- Equal width and height
 keymap("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close the current split" }) -- Close the current split
 
-
+--Undotree
+keymap("n", "<leader>u", ":UndotreeToggle<CR>")
