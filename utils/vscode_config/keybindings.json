@@ -1,7 +1,18 @@
 [
   {
   {
-    "key": "shift+ctrl+e",
+    "command": "vscode-neovim.compositeEscape1",
+    "key": "j",
+    "when": "neovim.mode == insert && editorTextFocus",
+    "args": "j",
+  },{
+    "command": "vscode-neovim.compositeEscape2",
+    "key": "k",
+    "when": "neovim.mode == insert && editorTextFocus",
+    "args": "k",
+  },
+  {
+    "key": "ctrl+e",
     "command": "actions.findWithSelection"
   },
   {
@@ -168,5 +179,10 @@
     "key": "ctrl+f",
     "command": "-vscode-neovim.ctrl-f",
     "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
+  },
+  {
+    "key": "space",
+    "command": "whichkey.show",
+    "when": "neovim.mode != 'insert' && !inputFocus"
   }
 ]

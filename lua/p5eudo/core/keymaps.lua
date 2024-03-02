@@ -78,7 +78,7 @@ keymap("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 keymap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
 
 -- Telescope
-keymap("n", "<leader>ff", "<cmd>Tele find_files<cr>")
+keymap("n", "<leader>f", "<cmd>Tele find_files<cr>")
 keymap("n", "<leader>rg", "<cmd>Telescope live_grep<cr>")
 keymap("n", "<leader>gs", "<cmd>Telescope grep_string<cr>")
 keymap("n", "<leader>fb", "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>")

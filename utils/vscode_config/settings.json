@@ -127,18 +127,6 @@
         },
         {
           "key": "S",
-          "name": "Stop debug",
-          "type": "command",
-          "command": "workbench.action.debug.stop"
-        },
-        {
-          "key": "c",
-          "name": "Continue debug",
-          "type": "command",
-          "command": "workbench.action.debug.continue"
-        },
-        {
-          "key": "p",
           "name": "Pause debug",
           "type": "command",
           "command": "workbench.action.debug.pause"
@@ -542,6 +530,18 @@
           "name": "Maximize editor group",
           "type": "command",
           "command": "workbench.action.minimizeOtherEditors"
+        },
+        {
+          "key": "M",
+          "name": "Maximize editor group and hide side bar",
+          "type": "command",
+          "command": "workbench.action.maximizeEditor"
+        },
+        {
+          "key": "=",
+          "name": "Reset editor group sizes",
+          "type": "command",
+          "command": "workbench.action.evenEditorWidths"
         },
         {
           "key": "M",
