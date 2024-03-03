@@ -1,10 +1,10 @@
 return {
 	"nvim-lualine/lualine.nvim",
-  enabled = false,
+  enabled = "VeryLazy",
 	config = function()
 		require("lualine").setup({
 			options = {
-				theme = "gruvbox",
+				theme = "solarized_dark",
 			},
 		})
 	end,
