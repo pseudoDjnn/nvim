@@ -77,6 +77,9 @@ keymap("n", "K", vim.lsp.buf.hover, { desc = "Hover" })
 keymap("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 keymap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
 
+-- Spectre
+keymap("n", "<leader>S", "<cmd>:Spectre<CR>", {desc = "Toggle Spectre"})
+
 -- Telescope
 keymap("n", "<leader>f", "<cmd>Tele find_files<cr>")
 keymap("n", "<leader>rg", "<cmd>Telescope live_grep<cr>")
