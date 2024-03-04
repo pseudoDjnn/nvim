@@ -67,7 +67,7 @@ keymap("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", {})
 keymap("n", "<Leader>lg", ":LazyGit<CR>")
 
 -- None-ls
-keymap("n", "<leader>rf", vim.lsp.buf.format, { desc = "reformat"})
+keymap("n", "<leader>rf", vim.lsp.buf.format, { desc = "Lua Format"})
 
 -- NvimTree
 keymap("n", "<C-d>", "<cmd>NvimTreeToggle<cr>")
