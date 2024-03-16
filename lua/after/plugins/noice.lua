@@ -30,7 +30,7 @@ return {
 -- }),
 		opts = {
 			timeout = 10000,
-			background_colour = "#000000",
+			background_colour = "#FFEDED",
 			render = "wrapped-compact",
 		},
 	},
